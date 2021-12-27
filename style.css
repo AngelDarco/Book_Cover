@@ -1,4 +1,10 @@
-* {
+:root{
+  --width: 380px;
+  --height: 567px;
+  --img: url(./img/back.png)
+}
+
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,7 +15,6 @@ section {
   width: 100%;
   height: 100vh;
 }
-
 
 .PortadaL {
   width: 100%;
@@ -27,20 +32,15 @@ section {
   overflow: hidden;
 }
 .contenedor-portada-libro .libro {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 383px;
-  height: 567px;
+  width: var(--width);
+  height: var(--height);
   box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
-  background-position: center;
   transform-style: preserve-3d;
   transition: 1.5s;
 }
 
 .contenedor-portada-libro .libro:hover {
-  transform: rotateY(45deg);
+  transform: rotateY(65deg);
   box-shadow: 0 20px 20px #00000033;
 }
 .contenedor-portada-libro .libro:active {
@@ -62,14 +62,16 @@ section {
 
 .contenedor-portada-libro .libro::after {
   content: "";
-  width: 100%;
-  height: 100%;
+  width: var(--width);
+  height: var(--height);
   position: absolute;
   transform-origin: center;
   top: 0;
   left: 0;
-  background: url(./img/back.png);
+  background: var(--img);
   background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
   transform: rotateY(180deg) translateZ(60px);
 }
 
@@ -84,6 +86,8 @@ section {
 
 @media (max-width: 800px) {
   :root{
-    --size: 200px;
+    --width: 300px;
+    --height: 460px;
+    --img: url(./img/back2.png)
   }
 }
